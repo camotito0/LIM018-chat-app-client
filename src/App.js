@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Welcome from './components/welcomeView';
+import Login from './components/loginView';
+import Register from './components/registerView';
+import Channels from './components/channelsView';
+import Chat from './components/chatView';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Welcome/>}></Route>
+        <Route exact path="/login" element={<Login/>}></Route>
+        <Route exact path="/register" element={<Register/>}></Route>
+        <Route exact path="/channels" element={<Channels/>}></Route>
+        <Route exact path="/chat" element={<Chat/>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
