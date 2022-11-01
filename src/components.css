@@ -1,0 +1,499 @@
+/* styles for welcome view */
+.welcome-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 25px 55px;
+}
+
+.welcome-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 90px 0 0;
+}
+
+.welcome-buttons button {
+    width: 330px;
+    height: 56px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.welcome-buttons button > a {
+    text-decoration: none;
+    color: #2D4E71;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.welcome-buttons button:first-child {
+    background-color: #8DE3DC;
+}
+
+.welcome-buttons button:last-child {
+    background-color: transparent;
+    border: 1.5px solid #8DE3DC;
+}
+
+/* styles for login an register view */
+.login-main, .register-main {
+    padding: 66px 29px 55px 28px;
+}
+
+.login-main h2, .register-main h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: #1E232C;
+}
+
+.login-main button, .register-main button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 41px;
+    height: 41px;
+    background: #FFFFFF;
+    border: 1px solid #E8ECF4;
+    border-radius: 12px;
+}
+
+.login-main button > a > svg, .register-main button > a > svg{
+    width: 19px;
+    height: 19px;
+}
+
+.login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 53px;
+}
+
+.login-form input, .register-form input {
+    width: 306px;
+    height: 56px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    outline: none;
+    padding-left: 20px;
+    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #2D4E71;
+}
+
+.login-form input::placeholder , .register-form input::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #8391A1;
+}
+
+/* .register-form span {
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+.login-form input:invalid[focused="true"] ~ .login-form span, .register-form input:invalid[focused="true"] ~ .register-form span {
+    display: flex;
+}
+
+ */
+
+.login-form button, .register-form button {
+    margin-top: 72px;
+    width: 330px;
+    height: 56px;
+    background: #8DE3DC;
+    border-radius: 8px;
+    color: #2D4E71;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.login-redirect, .register-redirect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    bottom: 0;
+    position: absolute;
+    margin: 0 36px 55px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #8391A1;
+}
+
+.login-redirect a, .register-redirect a {
+    font-weight: 600;
+    color: #2D4E71;
+}
+
+/* styles for channels view */
+.channels-main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.channels-header {
+    display: flex;
+    align-items: center;
+    gap: 190px;
+    margin: 22px 0 11px;
+}
+
+.channels-header button, .burger-container button:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 41px;
+    height: 41px;
+    background: #FFFFFF;
+    border: 1px solid #E8ECF4;
+    border-radius: 12px;
+}
+
+.channels-header button > svg{
+    width: 16px;
+    height: 16px;
+}
+
+.channels-search {
+    width: 308px;
+    height: 30px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    padding: 6px 0 6px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.channels-search svg {
+    color: #6B7B8E;
+    width: 19px;
+    height: 19px;
+}
+
+.channels-search input{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #8391A1;
+}
+
+.channels-search input::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #8391A1;
+}
+
+.channels-chats {
+    margin-top: 33px;
+}
+
+.channels-chat__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #2D4E71;
+    border-radius: 8px;
+    padding: 16px 20px 16px 20px;
+}
+
+.channels-chat__button p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #2D4E71;
+}
+
+.channels-chat__button svg {
+    color: #2D4E71;
+    width: 19px;
+    height: 19px;
+}
+
+.channels-create-button {
+    width: 330px;
+    height: 56px;
+    background: #99CEEB;
+    border: 1px solid #2D4E71;
+    border-radius: 8px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #2D4E71;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 55px;
+}
+
+/* styles for burger */
+.burger-background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: 0.95;
+}
+
+.burger-container {
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    padding-top: 33px;
+}
+
+.burger-container button:first-child  {
+    margin-left: 315px;
+}
+
+.burger-container button > svg {
+    width: 24px;
+    height: 24px;
+}
+
+.burger-user__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.burger-user__info button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 40%;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid #FF647C;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FF647C;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 55px;
+}
+
+.burger-user__info button > svg {
+    color: #FF647C;
+}
+
+.burger-user__info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: -2px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1E232C;
+}
+
+.burger-user__info-status svg{
+   color: #3EC5A7;
+}
+
+/* styles for modal create chat */
+.create-chat__background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+
+    background: rgba(250, 250, 250, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+.create-chat__div {
+    width: 300px;
+    height: 485px;
+    background: #FFFFFF;
+    border: 1px solid #2D4E71;
+    border-radius: 20px;
+
+    padding-top: 22px;
+    padding-left: 33px;
+}
+
+.create-chat__close-button{
+    margin-left: 244px;
+    width: 36px;
+    height: 36px;
+
+    background: #FFFFFF;
+    border: 1.8px solid #E8ECF4;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-chat__close-button svg {
+    width: 25px;
+    height: 25px;
+}
+
+.create-chat__div h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    color: #1E232C;
+    width: 100%;
+}
+
+.create-chat__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.create-chat__form input {
+    width: 244px;
+    height: 35px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    padding: 5px 12px;
+    outline: none;
+}
+
+.create-chat__form button {
+    width: 270px;
+    height: 44px;
+    background: #8DE3DC;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+
+    color: #2D4E71;
+
+    bottom: 0;
+    position: absolute;
+
+    margin-bottom: 200px;
+}
+
+/* styles for chat view */
+.chat-header {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #DADADA;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.chat-header button {
+    margin-top: 10px;
+    margin-left: 28px;
+    width: 41px;
+    height: 41px;
+    background: #FFFFFF;
+    border: 1px solid #E8ECF4;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-header button > a > svg {
+    width: 19px;
+    height: 19px;
+}
+
+.chat-header h2 {
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    color: #1E232C;
+}
+
+.chat-messages {
+    background: #FAFAFA;
+    height: 80vh;
+}
+
+.chat-bottom {
+    width: 100vw;
+    height: 9.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #DADADA;
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 25%);
+}
+
+.chat-bottom input {
+    width: 260px;
+    height: 42px;
+    
+    border: 1.5px solid #2D4E71;
+    border-radius: 8px;
+    padding-left: 20px;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #2D4E71;
+}
+
+.chat-bottom input::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #8391A1;
+}
+
+.chat-bottom button {
+    background: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-bottom button > svg {
+    width: 28px;
+    height: 28px;
+    color: #2D4E71;
+}

@@ -11,9 +11,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Welcome/>}></Route>
         <Route exact path="/login" element={<Login/>}></Route>
-        <Route exact path="/register" element={<Register/>}></Route>
         <Route exact path="/channels" element={<Channels/>}></Route>
-        <Route exact path="/chat" element={<Chat/>}></Route>
+        {/* <Route exact path="/register" element={<Register/>}></Route>
+        <Route exact path="/chat" element={<Chat/>}></Route> */}
       </Routes>
     </Router>
   );
