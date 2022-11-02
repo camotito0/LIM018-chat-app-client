@@ -13,7 +13,7 @@ function Login() {
         headers: {'Content-Type': 'application/json'}
       });
       const data = await fetchApi.json();
-      if(data.message === 'User logged') {
+      if(data.message === 'user logged') {
         navigate('/channels')
         return data
       } else return data
