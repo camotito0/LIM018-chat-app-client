@@ -473,6 +473,7 @@
 .message__chats {
     width: 92%;
     border-radius: 10px;
+    margin-bottom: 25px;
 }
 
 .message__sender {
@@ -503,6 +504,7 @@
 
 .message__chats > p {
     font-size: 13px;
+    margin-top: 5px;
 }
 
 .sender__name {
@@ -531,7 +533,7 @@
     width: 260px;
     height: 42px;
     
-    border: 1px solid #DADADA;
+    border: 1px solid #2D4E71;
     border-radius: 8px;
     padding-left: 20px;
     outline: none;
@@ -547,7 +549,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    color: #8391A1;
+    color: #2D4E71;
 }
 
 .chat-bottom button {
