@@ -1,8 +1,9 @@
 /* eslint-disable */
-import { IoIosArrowBack, IoIosPaperPlane } from  "react-icons/io";
-import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import { Link, useLocation } from 'react-router-dom';
+import { IoIosArrowBack, IoIosPaperPlane } from  "react-icons/io";
 import socket from './sokectConection';
+import '../components.css';
 
 function Channel() {
   const [message, setMessage] = useState('');

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
+import '../components.css';
 
 function Register() {
   const [values, setValues] = useState(({
@@ -23,7 +24,7 @@ function Register() {
       });
       const data = await fetchAPI.json();
       if(data.message === 'user added') {
-        navigate('channels')
+        navigate('/channels')
         return data
       } else return data
     } catch (e) {

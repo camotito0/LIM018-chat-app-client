@@ -30,6 +30,7 @@ function CreateChat({setOpenModal}) {
     e.preventDefault()
     const res = await createChatFetch();
     console.log(res);
+    e.target.reset();
   }
 
   return (

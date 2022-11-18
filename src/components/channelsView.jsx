@@ -1,9 +1,9 @@
-/* eslint-disable */
 import { useEffect, useState } from 'react';
-import { IoIosArrowForward, IoIosSearch } from  "react-icons/io";
 import { IoMenu } from  "react-icons/io5";
-import {Link, Outlet} from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import CreateChat from './modalCreateChat';
+import { IoIosSearch, IoMdMore } from "react-icons/io";
+import '../components.css';
 
 function Channels() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -21,9 +21,9 @@ function Channels() {
     })
   }
   
-  useEffect(() => { fetchUsers() },[])
+  useEffect(() => { fetchUsers() })
   
-  useEffect(() => {}, [data, modalOpen])
+ /*  useEffect(() => {}, [data, modalOpen]) */
 
   const filteredData = data.filter((item) => item.username === userData[0].username)
 
@@ -40,19 +40,19 @@ function Channels() {
         <input type='text' placeholder='Search'/>
       </div>
       <section className='channels-chats'>
-        <Link to='0' state={{item:{name:'Chat general'}}}>
           <button className='channels-chat__button'>
-            <p>Chat General</p>
-            <IoIosArrowForward />
+            <Link to='0' state={{item:{name:'Chat general'}}}>
+              <p>Chat General</p>
+            </Link>
+            <IoMdMore />
           </button>
-        </Link>
         {filteredData.length > 0 ? filteredData.map(item => {
-          return  <Link to={`${item.id}`} state={{ item:item}}>
-                    <button className='channels-chat__button' key={item.id}>
+          return  <button className='channels-chat__button' key={item.id}>
+                    <Link to={`${item.id}`} state={{item:item}}>
                       <p>{item.name}</p>
-                      <IoIosArrowForward />
-                    </button>
-                  </Link>
+                    </Link>
+                    <IoMdMore />
+                  </button>
         }):''}
       </section>
       <button

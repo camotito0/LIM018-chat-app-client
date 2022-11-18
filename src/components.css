@@ -165,7 +165,7 @@
 .channels-search {
     width: 308px;
     height: 30px;
-    border: 1px solid #DADADA;
+    border: 1px solid #6B7B8E;
     border-radius: 8px;
     padding: 6px 0 6px 20px;
     display: flex;
@@ -195,17 +195,20 @@
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    color: #8391A1;
+    color: #6B7B8E;
 }
 
 .channels-chats {
+    border-radius: 12px;
     margin-top: 22px;
     overflow-y: scroll;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65%;
 }
 
-.channels-chats > a {
-    text-decoration: none;
-}
 
 .channels-chat__button {
     display: flex;
@@ -214,10 +217,14 @@
     width: 330px;
     height: 56px;
     background: #FFFFFF;
-    border: 1px solid #2D4E71;
-    border-radius: 8px;
+    border: none;
+    border-bottom: 1px solid #2D4E71;
     padding: 16px 20px 16px 20px;
     margin-bottom: 12px;
+}
+
+.channels-chat__button  > a {
+    text-decoration: none;
 }
 
 .channels-chat__button p {
@@ -239,7 +246,6 @@
     background: #99CEEB;
     border: 1px solid #2D4E71;
     border-radius: 8px;
-
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -247,7 +253,7 @@
     color: #2D4E71;
     bottom: 0;
     position: absolute;
-    margin-bottom: 55px;
+    margin-bottom: 33px;
 }
 
 /* styles for burger */
@@ -334,11 +340,10 @@
 
 .create-chat__div {
     width: 300px;
-    height: 485px;
+    height: 35%;
     background: #FFFFFF;
     border: 1px solid #2D4E71;
     border-radius: 20px;
-
     padding-top: 22px;
     padding-left: 33px;
 }
@@ -374,7 +379,7 @@
 .create-chat__form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 55px;
 }
 
 .create-chat__form input {
@@ -398,13 +403,7 @@
     font-weight: 600;
     font-size: 18px;
     text-align: center;
-
     color: #2D4E71;
-
-    bottom: 0;
-    position: absolute;
-
-    margin-bottom: 200px;
 }
 
 /* styles for chat view */

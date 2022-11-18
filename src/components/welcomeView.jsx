@@ -7,7 +7,7 @@ function Welcome() {
 			<img src='../img.svg' alt='welcome-img'/>
 			<div className='welcome-buttons' >
 					<button><Link to='/login'>Login</Link></button>
-					<button><Link to='/register'>Register</Link></button>
+					<button><Link to='/signup'>Register</Link></button>
 			</div>
 		</main>
 	);
