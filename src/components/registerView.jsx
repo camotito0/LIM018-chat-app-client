@@ -42,7 +42,7 @@ function Register() {
     <main className='register-main'>
       <Link to='/'><button><IoIosArrowBack/></button></Link>
       <h2>Welcome! Let's get<br/>started</h2>
-      <form onSubmit={sendData}>
+      <form className='register-form' onSubmit={sendData}>
         <input
           type='text'
           name='username'
@@ -66,7 +66,7 @@ function Register() {
         />
         <button>Agree and Register</button>
       </form>
-      <div>
+      <div className='register-redirect'>
         <p>Do you have an account?</p>
         <Link to='/login'>Login</Link>
       </div>
