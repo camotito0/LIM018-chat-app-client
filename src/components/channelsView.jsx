@@ -4,7 +4,6 @@ import { IoIosArrowForward, IoIosSearch } from  "react-icons/io";
 import { IoMenu } from  "react-icons/io5";
 import {Link, Outlet} from 'react-router-dom';
 import CreateChat from './modalCreateChat';
-import socket from './sokectConection'
 
 function Channels() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -48,7 +47,7 @@ function Channels() {
           </button>
         </Link>
         {filteredData.length > 0 ? filteredData.map(item => {
-          return  <Link to={`${item.id}`} state={{ item: item }}>
+          return  <Link to={`${item.id}`} state={{ item:item}}>
                     <button className='channels-chat__button' key={item.id}>
                       <p>{item.name}</p>
                       <IoIosArrowForward />
