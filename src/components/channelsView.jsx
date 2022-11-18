@@ -2,7 +2,9 @@
 import { useEffect, useState } from 'react';
 import { IoIosArrowForward, IoIosSearch } from  "react-icons/io";
 import { IoMenu } from  "react-icons/io5";
+import {Link, Outlet} from 'react-router-dom';
 import CreateChat from './modalCreateChat';
+import socket from './sokectConection'
 
 function Channels() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,10 +24,10 @@ function Channels() {
   
   useEffect(() => { fetchUsers() },[])
   
-  useEffect(() => {
-  }, [data, modalOpen])
-  
+  useEffect(() => {}, [data, modalOpen])
+
   const filteredData = data.filter((item) => item.username === userData[0].username)
+
   return (
     <main className='channels-main'>
       <div className='channels-header'>
@@ -39,14 +41,20 @@ function Channels() {
         <input type='text' placeholder='Search'/>
       </div>
       <section className='channels-chats'>
-        {filteredData.length > 0 ? filteredData.map(item => {
-          return <>
-          <button className='channels-chat__button' key={item.id}>
-            <p>{item.name}</p>
+        <Link to='0' state={{item:{name:'Chat general'}}}>
+          <button className='channels-chat__button'>
+            <p>Chat General</p>
             <IoIosArrowForward />
           </button>
-        </>
-        }): <p>Chat general</p>}
+        </Link>
+        {filteredData.length > 0 ? filteredData.map(item => {
+          return  <Link to={`${item.id}`} state={{ item: item }}>
+                    <button className='channels-chat__button' key={item.id}>
+                      <p>{item.name}</p>
+                      <IoIosArrowForward />
+                    </button>
+                  </Link>
+        }):''}
       </section>
       <button
         className='channels-create-button'
@@ -54,7 +62,8 @@ function Channels() {
       >
         create New chat
       </button>
-      {modalOpen && <CreateChat setOpenModal={setModalOpen} user_id={userData[0].id} />}
+      {modalOpen && <CreateChat setOpenModal={setModalOpen} />}
+      <Outlet />
     </main>
   );
 }

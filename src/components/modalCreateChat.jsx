@@ -1,26 +1,29 @@
-import axios from 'axios';
 import { useState } from "react";
 import {IoIosClose} from "react-icons/io";
 import '../components.css';
 
-function CreateChat({setOpenModal, user_id}) {
+function CreateChat({setOpenModal}) {
+  const [values, setValues] = useState({name: '', user_id: ''});
   const userData = JSON.parse(sessionStorage.user);
-  console.log(userData);
-  const createChatFetch = () => {
-    axios.post('http://localhost:5000/channel', { 
-      body: values,
-      headers: {'Authorization': `Bearer ${userData[0].token}`}})
-    .then((resp) => {
-      console.log(resp.data)
-      return resp.data
-    })
-    .catch((err) => console.log(err))
+
+  const createChatFetch = async () => {
+    try {
+      const fetchApi = await fetch('http://localhost:5000/channel', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userData[0].token}`}
+      });
+      const data = await fetchApi.json();
+      return data
+    } catch(err) {
+      return err.message
+    }
   }
-
-  const [values, setValues] = useState({name: '', user_id: user_id});
-
+  
   const handleInputChange = (e) => {
-    setValues({...values, [e.target.name]: e.target.value})
+    setValues({...values,[e.target.name]: e.target.value, user_id: userData[0].id})
   }
 
   const createChat = async (e) => {

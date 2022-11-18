@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Welcome from './components/welcomeView';
 import Login from './components/loginView';
-import Register from './components/registerView';
+/* import Register from './components/registerView'; */
 import Channels from './components/channelsView';
-import Chat from './components/chatView';
+import Channel from './components/channelView';
 
 function App() {
   return (
@@ -11,9 +11,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Welcome/>}></Route>
         <Route exact path="/login" element={<Login/>}></Route>
-        <Route exact path="/channels" element={<Channels/>}></Route>
-        {/* <Route exact path="/register" element={<Register/>}></Route>
-        <Route exact path="/chat" element={<Chat/>}></Route> */}
+        <Route exact path="/channels/*" element={<Channels/>}>
+          <Route path=":idChat" element={<Channel/>}></Route>
+        </Route>
       </Routes>
     </Router>
   );
