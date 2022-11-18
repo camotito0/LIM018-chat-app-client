@@ -7,12 +7,12 @@ function Login() {
   const navigate = useNavigate();
   const loginFetch = async () => {
     try {
-      const fetchApi = await fetch('http://localhost:5000/auth/login', {
+      const fetchAPI = await fetch('http://localhost:5000/auth/login', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {'Content-Type': 'application/json'}
       });
-      const data = await fetchApi.json();
+      const data = await fetchAPI.json();
       if(data.message === 'user logged') {
         navigate('/channels')
         return data
