@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { IoMenu } from  "react-icons/io5";
 import { Link, Outlet } from 'react-router-dom';
-import CreateChat from './modalCreateChat';
 import { IoIosSearch, IoMdMore } from "react-icons/io";
+import { IoMenu } from  "react-icons/io5";
+import CreateChat from './modalCreateChat';
+import BurguerMenu from './burguerMenu';
 import '../components.css';
 
 function Channels() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModal] = useState(false);
+  const [burgerOpen, setBurgerOpen] = useState(false);
   const [data, setData] = useState([]);
   const userData = JSON.parse(sessionStorage.user);
   
@@ -22,8 +24,6 @@ function Channels() {
   }
   
   useEffect(() => { fetchUsers() })
-  
- /*  useEffect(() => {}, [data, modalOpen]) */
 
   const filteredData = data.filter((item) => item.username === userData[0].username)
 
@@ -31,7 +31,7 @@ function Channels() {
     <main className='channels-main'>
       <div className='channels-header'>
         <h2>Channels</h2>
-        <button>
+        <button onClick={() => {setBurgerOpen(true)}} >
           <IoMenu/>
         </button>
       </div>
@@ -57,11 +57,12 @@ function Channels() {
       </section>
       <button
         className='channels-create-button'
-        onClick={() => {setModalOpen(true)}}
+        onClick={() => {setModal(modalOpen.createChat = true)}}
       >
         create New chat
       </button>
-      {modalOpen && <CreateChat setOpenModal={setModalOpen} />}
+      {burgerOpen&& <BurguerMenu setBurgerOpen={setBurgerOpen}/>}
+      {modalOpen && <CreateChat setModal={setModal} />}
       <Outlet />
     </main>
   );

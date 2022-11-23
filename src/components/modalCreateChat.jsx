@@ -2,7 +2,7 @@ import { useState } from "react";
 import {IoIosClose} from "react-icons/io";
 import '../components.css';
 
-function CreateChat({setOpenModal}) {
+function CreateChat({setModal}) {
   const [values, setValues] = useState({name: '', user_id: ''});
   const userData = JSON.parse(sessionStorage.user);
 
@@ -38,7 +38,7 @@ function CreateChat({setOpenModal}) {
       <div className="create-chat__div">
         <button
           className="create-chat__close-button"
-          onClick={() => setOpenModal(false)}
+          onClick={() => setModal(false)}
         >
           <IoIosClose/>
         </button>
