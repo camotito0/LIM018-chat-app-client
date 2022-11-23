@@ -57,7 +57,7 @@ function Channels() {
       </section>
       <button
         className='channels-create-button'
-        onClick={() => {setModal(modalOpen.createChat = true)}}
+        onClick={() => {setModal(true)}}
       >
         create New chat
       </button>
